@@ -1,0 +1,32 @@
+type: code
+files:
+- name: src/Main.kt
+  visible: true
+  text: |-
+    class Player(val id: Int, val name: String) {
+        companion object {
+            val role = "playable character"
+            fun getInfo() = "$id, $name, $role"
+        }
+    }
+
+    fun getPlayerInfo(player: Player) = // TODO
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/10714
+status: Failed
+feedback:
+  message: |
+    You cannot have an access to the Player class from the companion object, because the companion is something common for all objects of the Player class. So, you cannot just use getInfo() function from this class. You can fix this function or simply move it to the Player class, it's up to you!
+
+    Compilation error
+    main.kt:11:52: error: no value passed for parameter 'id'
+    fun getPlayerInfo(player: Player) = player.getInfo()
+                                                       ^
+    main.kt:11:52: error: no value passed for parameter 'name'
+    fun getPlayerInfo(player: Player) = player.getInfo()
+                                                       ^
+    main.kt:11:52: error: no value passed for parameter 'role'
+    fun getPlayerInfo(player: Player) = player.getInfo()
+                                                       ^
+  time: Wed, 30 Sep 2020 13:06:47 UTC
+record: -1
